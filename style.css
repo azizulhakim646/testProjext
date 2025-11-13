@@ -1,0 +1,427 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f6f7d0; 
+    color: #000000; 
+}
+
+.navbar {
+    background-color: #b3efe6;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar .logo img {
+    height: 100px; /* Increased height */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 30px; /* Increased margin */
+  }
+  
+  .navbar .company-name {
+    font-size: 40px; /* Increased font size */
+    font-weight: bold;
+    color: #f42a41;
+  }
+  .navbar .company-moto {
+    font-size: 10px; /* Increased font size */
+    font-weight: bold;
+    margin-block-end: 5px;
+    color: #f42a41;
+  }
+
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin-right: 20px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: #f42a41;
+}
+
+.lang-btn {
+    background-color: #fc486b;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Slider Container */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slider .slide {
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slider .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.slider-dots .dot {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider-dots .dot.active {
+    background-color: #f42a41;
+}
+
+/* Section Styles */
+.section {
+    padding: 40px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.donate-section {
+    background-color: #f6f7d0;
+    padding: 60px 20px;
+    text-align: center;
+    color: #333;
+}
+
+.donate-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.donate-content {
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
+    padding: 20px;
+}
+
+.donate-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.donate-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: black;
+}
+
+.donate-btn {
+    display: inline-block;
+    background-color: #000000;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.donate-btn:hover {
+    background-color: #b3efe6;
+}
+
+.donate-image {
+    flex: 1;
+    max-width: 500px;
+    text-align: center;
+}
+
+.donate-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .donate-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .donate-content {
+        max-width: 100%;
+    }
+
+    .donate-image {
+        max-width: 100%;
+        margin-top: 30px;
+    }
+}
+
+
+/* Footer Styles */
+footer {
+    background-color: #D397F8;
+    color: white;
+    padding: 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 25%;
+    padding: 10px;
+}
+
+.footer-section h2 {
+    margin-bottom: 15px;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-section a:hover {
+    color: #f42a41;
+}
+
+.footer-bottom {
+    text-align: center;
+    background-color: #D397F8;
+    padding: 10px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .navbar nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .donate-card {
+        max-width: 90%;
+    }
+}
+
+/* Trustees Section */
+.trustees-section {
+    padding: 40px;
+    text-align: center;
+}
+
+.trustees-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.trustee-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.trustee-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.trustee-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.trustee-position {
+    font-size: 18px;
+    color: #006a4e;
+    margin-bottom: 10px;
+}
+
+.trustee-bio {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Contact Us Section */
+.contact-section {
+    padding: 40px;
+    background-color: #f6f7d0; /* Same greenish background */
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.contact-form label {
+    font-size: 16px;
+    color: #D397F8;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #f42a41;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: white;
+    color: #f42a41;
+    border: 1px solid #f42a41;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #b3efe6;
+    color: black;
+    padding: 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 25%;
+    padding: 10px;
+}
+
+.footer-section h2 {
+    margin-bottom: 15px;
+}
+
+.footer-section a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-section a:hover {
+    color: #f42a41;
+}
+
+.footer-bottom {
+    text-align: center;
+    background-color: #b3efe6;
+    padding: 10px;
+}
