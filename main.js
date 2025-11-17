@@ -49,3 +49,52 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
             alert("Oops, something went wrong. Please try again later."); // Error message
         });
 });
+
+if (typeof document !== "undefined") {
+    let currentLanguage = "en"; // Default language
+
+    function switchLanguage() {
+        const elements = document.querySelectorAll("[data-en][data-bn]");
+        const langButton = document.querySelector('.lang-btn');
+        currentLanguage = currentLanguage === "en" ? "bn" : "en";
+
+        elements.forEach(element => {
+            element.textContent = element.getAttribute(`data-${currentLanguage}`);
+        });
+
+        langButton.textContent = currentLanguage === "en" ? "বাংলা" : "English";
+    }
+
+    // Image Slider
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let slides = document.querySelectorAll('.slide');
+        let dots = document.querySelectorAll('.dot');
+        slides.forEach(slide => slide.style.display = 'none');
+        dots.forEach(dot => dot.classList.remove('active'));
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = 'block';
+        dots[slideIndex - 1].classList.add('active');
+        setTimeout(showSlides, 3000);
+    }
+
+    // Initialize EmailJS
+    emailjs.init("B_kkvf9-k7YPll2vb");
+
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        emailjs.sendForm("service_9vxs0xk", "template_d7xpkfu", this)
+            .then(function () {
+                alert("Your message has been sent successfully!");
+                document.getElementById("contact-form").reset();
+            }, function () {
+                alert("Oops, something went wrong. Please try again later.");
+            });
+    });
+}
