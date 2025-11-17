@@ -98,3 +98,5 @@ if (typeof document !== "undefined") {
             });
     });
 }
+
+typeof document === "undefined"
